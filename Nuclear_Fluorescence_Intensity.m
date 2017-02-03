@@ -264,6 +264,8 @@ se=ones(3);
          end
    LCOLOR5=CO;                                    
 mult=[1 1 1];
+Compb=uint8(zeros(size(LCOLOR5,1),size(LCOLOR5,2),3));
+
                           for ind=1:3
                           col_img2a=mult(ind)*LCOLOR5(:,:,ind);
 %                           col_img2a(LABEL==0)=0;  
@@ -306,6 +308,8 @@ object3d=LABEL == val;
          CA1=CA;
  save([Reshome2 filesep filename2 filesep filename2 'CA1.mat'],'CA1');  
  
+ COK=zeros(size(Compb,1),size(Compb,2),3);
+ 
 COK(:,:,1)=1*CO(:,:,1);
 COK(:,:,2)=1*CO(:,:,2);
 COK(:,:,3)=1*CO(:,:,3);
@@ -340,6 +344,8 @@ set(gca,'Position',[0 0 1 1]) % Make the axes occupy the hole figure
   export_fig([Reshome2 filesep filename2 filesep filename2 '_method1'],'-a2', '-m2','-png', '-r300');
   
   mult=[1 0 0];
+  
+   Compc=uint8(zeros(size(Compb,1),size(Compb,2),3));
     for ind=1:3
 %         if ind==1
                           col_img2a=mult(ind)*LCOLOR5(:,:,ind);
